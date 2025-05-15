@@ -8,15 +8,15 @@ from datetime import datetime
 # ─── CONFIG ────────────────────────────────────────────────────────────────
 REPO_PATH = os.path.dirname(os.path.realpath(__file__))
 TEXT_FILES = [f for f in os.listdir(REPO_PATH) if f.endswith('.txt')]
-MIN_WAIT = 60 * 30    # 30 minutes, in seconds
-MAX_WAIT = 60 * 90    # 90 minutes, in seconds
+MIN_WAIT = 60 * 15    # 30 minutes, in seconds
+MAX_WAIT = 60 * 45    # 90 minutes, in seconds
 COMMIT_MESSAGES = [
-    "tweak docs",
-    "minor update",
-    "fix typo",
-    "update notes",
-    "random thought",
-    "cleanup text"
+    "Tweak docs",
+    "Minor update",
+    "Fixed typo",
+    "Update notes",
+    "Random thought",
+    "Cleanup text"
 ]
 # ────────────────────────────────────────────────────────────────────────────
 
@@ -39,14 +39,18 @@ def main():
 
     while True:
         wait = random.uniform(MIN_WAIT, MAX_WAIT)
+        print(f"Waiting {wait/60} minutes")
         time.sleep(wait)
 
         file_to_edit = choose_file()
+        print(f"Editing the file {file_to_edit}")
         edit_file(file_to_edit)
 
         git(['add', os.path.relpath(file_to_edit, REPO_PATH)])
         msg = random.choice(COMMIT_MESSAGES)
         git(['commit', '-m', msg])
+        print(f"Committing {file_to_edit} with “{msg}”")
+
         git(['push', 'origin', 'main'])  # or your default branch
         print(f"Pushed {file_to_edit} with “{msg}” after waiting {int(wait)}s")
 
