@@ -48,7 +48,7 @@ def main():
         msg = random.choice(COMMIT_MESSAGES)
         git(['commit', '-m', msg])
         git(['push', 'origin', 'main'])  # or your default branch
-        print(f"Committed {file_to_edit} with “{msg}” after waiting {int(wait)}s")
+        print(f"Pushed {file_to_edit} with “{msg}” after waiting {int(wait)}s")
 
 if __name__ == '__main__':
     main()
