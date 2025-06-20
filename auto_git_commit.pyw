@@ -8,8 +8,8 @@ from datetime import datetime
 # ─── CONFIG ────────────────────────────────────────────────────────────────
 REPO_PATH = os.path.dirname(os.path.realpath(__file__))
 TEXT_FILES = [f for f in os.listdir(REPO_PATH) if f.endswith('.txt')]
-MIN_WAIT = 60 * 20   # 20 minutes, in seconds
-MAX_WAIT = 60 * 60   # 60 minutes, in seconds
+MIN_WAIT = 60 * 30     # 120 minutes, in seconds
+MAX_WAIT = 60 * 250   # 1440 minutes, in seconds
 COMMIT_MESSAGES = [
     "Update content",
     "Minor fix",

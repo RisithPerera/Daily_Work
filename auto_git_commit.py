@@ -8,16 +8,42 @@ from datetime import datetime
 # ─── CONFIG ────────────────────────────────────────────────────────────────
 REPO_PATH = os.path.dirname(os.path.realpath(__file__))
 TEXT_FILES = [f for f in os.listdir(REPO_PATH) if f.endswith('.txt')]
-MIN_WAIT =  5 #60 * 15    # 30 minutes, in seconds
-MAX_WAIT = 10 #60 * 45    # 90 minutes, in seconds
+MIN_WAIT = 60 * 30     # 120 minutes, in seconds
+MAX_WAIT = 60 * 250   # 1440 minutes, in seconds
 COMMIT_MESSAGES = [
-    "Tweak docs",
-    "Minor update",
-    "Fixed typo",
-    "Update notes",
-    "Random thought",
-    "Cleanup text"
+    "Update content",
+    "Minor fix",
+    "Small edit",
+    "Adjust wording",
+    "Improve formatting",
+    "Fix formatting issue",
+    "Add comment",
+    "Edit note",
+    "Tweak text",
+    "Update info",
+    "Refactor comment",
+    "Polish text",
+    "Fix typo",
+    "Cleanup file",
+    "Update entry",
+    "Adjust sentence",
+    "More updates",
+    "Fix small issue",
+    "Reword note",
+    "Final edit",
+    "Fix whitespace",
+    "Touch up",
+    "Update with timestamp",
+    "Refresh file",
+    "Keep it fresh",
+    "Test commit",
+    "Another small change",
+    "Make a small tweak",
+    "Adjust text formatting",
+    "Keep it going",
+    "Commit for activity"
 ]
+
 # ────────────────────────────────────────────────────────────────────────────
 
 def choose_file():
